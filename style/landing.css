@@ -1,0 +1,65 @@
+body {
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+#hostname-line {
+    margin: 10px;
+    font-size: 16px;
+}
+
+#command-line {
+    background: none;
+    border: none;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+    width: 60%;
+}
+
+input::placeholder {
+    color: #00ff00;
+    opacity: 0.5;
+}
+
+pre {
+    font-size: 18px;
+    margin: 20px;
+}
+
+p, ul {
+    margin: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li::before {
+    content: '> ';
+    color: #00ff00;
+}
+
+#presentation {
+    margin: 20px;
+    font-size: 20px;
+}
+
+#studies, #experience, #hard-skills, #tools, #bio{
+    margin: 10px 20px;
+}
+
+strong {
+    color: #ffffff;
+}
+
+input[type="text"]:focus {
+    border: none;
+}
+
+#bio {
+    text-align: center;
+}
