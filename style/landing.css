@@ -1,23 +1,47 @@
+/* General body styling */
 body {
     background-color: black;
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
+    line-height: 1.8;
+    text-align: justify;
 }
 
+/* Command-line input area */
 #hostname-line {
-    margin: 10px;
-    font-size: 16px;
+    margin: 10px auto;
+    max-width: 80%;
+    font-size: 18px;
 }
 
-#command-line {
+#command-line, #response {
     background: none;
     border: none;
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
     outline: none;
-    width: 60%;
+    width: 70%;
+    caret-color: transparent; /* Hide the default caret */
+    position: relative;
+    font-size: 18px;
+}
+
+/* Blinking cursor for command line */
+#command-line::after {
+    content: '|';
+    font-size: 18px;
+    color: #00ff00;
+    animation: blink 1s step-end infinite;
+    position: absolute;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
 
 input::placeholder {
@@ -25,41 +49,105 @@ input::placeholder {
     opacity: 0.5;
 }
 
-pre {
-    font-size: 18px;
-    margin: 20px;
+input[type="text"]:focus {
+    outline: none;
 }
 
+/* Preformatted text for terminal art */
+pre {
+    font-size: 14px;
+    margin: 20px;
+    white-space: pre-wrap; /* Ensures preformatted text wraps on small screens */
+    word-wrap: break-word; /* Avoids overflow issues */
+}
+
+/* Text and list styling */
 p, ul {
     margin: 20px;
 }
 
 ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
-li::before {
+
+
+/* Specific lists: Use arrow (>), only for lists with class 'element' */
+ul.element li::before {
     content: '> ';
     color: #00ff00;
+    line-height: 2.5;
 }
 
+/* General list items: Use hyphen (-) */
+ul.secondary li::before {
+    content: '- ';
+    color: #00ff00;
+    line-height: 2;
+}
+
+/* Better spacing and alignment for presentation */
 #presentation {
-    margin: 20px;
+    margin: 10px auto;
     font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
 }
 
-#studies, #experience, #hard-skills, #tools, #bio{
-    margin: 10px 20px;
+/* Section styling (Studies, Experience, Skills) */
+#studies, #experience, #hard-skills, #tools, #bio {
+    margin: 10px auto;
+    max-width: 70%;
 }
 
+/* Title styling for elements */
+.element-title {
+    font-weight: bold;
+    color: #00ff00;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.element-place {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.element-duration {
+    color: #00ff00;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.element-content {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Center-align bio text */
+#bio {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/* Style for the list of skills */
+#hard-skills li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* Strong text (for emphasis) */
 strong {
     color: #ffffff;
 }
 
-input[type="text"]:focus {
-    border: none;
-}
-
-#bio {
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
     text-align: center;
 }

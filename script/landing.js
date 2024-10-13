@@ -39,6 +39,6 @@ function handleCommand() {
             response = `Command not found: ${command}. Maybe try a real command next time.`;
     }
 
-    responseDiv.innerText += `root@virtual-machine:$~ ${command}\n${response}\n`;
+    responseDiv.innerText += `root@virtual-machine:~$ ${command}\n${response}\n`;
     inputField.value = '';
 }
